@@ -15,6 +15,6 @@ def add_arrays(arr1, arr2):
     ans = []
 
     for i in range(lenArr1):
-        ans.append(arr1[i] + arr1[i])
+        ans.append(arr1[i] + arr2[i])
 
     return ans
