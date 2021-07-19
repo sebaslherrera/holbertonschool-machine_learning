@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def check_shapes(mat1, mat2):
     shape = []
     while (isinstance(mat1, list) and isinstance(mat2, list)):
