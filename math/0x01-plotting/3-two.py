@@ -9,7 +9,8 @@ t2 = 1600
 y1 = np.exp((r / t1) * x)
 y2 = np.exp((r / t2) * x)
 
-
+plt.ylim(bottom=0)
+plt.xlim(0, max(x))
 plt.plot(x, y1, label="C-14", linestyle="dashed", color="red")
 plt.plot(x, y2, label="Ra-226", color="green")
 
