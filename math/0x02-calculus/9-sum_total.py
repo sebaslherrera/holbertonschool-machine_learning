@@ -5,6 +5,7 @@
 
 
 def summation_i_squared(n):
+    """Summation without for loop"""
 
     if not isinstance(n, int) or n < 1:
         return None
