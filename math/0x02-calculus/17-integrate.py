@@ -14,6 +14,4 @@ def poly_integral(poly, C=0):
         if temp.is_integer():
             temp = int(temp)
         ans.append(temp)
-    if ans[-1] == 0:
-        ans.pop()
     return ans
