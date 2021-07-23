@@ -9,7 +9,7 @@ def poly_integral(poly, C=0):
         temp = poly[i] / (i + 1)
         if temp.is_integer():
             temp = int(temp)
-        if temp == 0:
-            continue
         ans.append(temp)
+    if ans[-1] == 0:
+        ans.pop()
     return ans
