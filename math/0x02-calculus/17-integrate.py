@@ -5,7 +5,9 @@
 
 def poly_integral(poly, C=0):
     """Return an list of the integrated polynomial"""
-    if not isinstance(poly, list) or not isinstance(C, int):
+    if (not isinstance(poly, list) or
+        not all(isinstance(x, (int, float)) for x in poly) or
+            not isinstance(C, int)):
         return None
 
     ans = [C]
@@ -14,4 +16,6 @@ def poly_integral(poly, C=0):
         if temp.is_integer():
             temp = int(temp)
         ans.append(temp)
+    if ans[-1] == 0:
+        ans.pop()
     return ans
