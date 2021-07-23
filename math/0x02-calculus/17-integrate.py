@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
+"""17 Integrate Module """
+
+
 def poly_integral(poly, C=0):
+    """Return an list of the integrated polynomial"""
     if not isinstance(poly, list) or not isinstance(C, int):
         return None
 
