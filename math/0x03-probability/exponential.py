@@ -46,18 +46,12 @@ class Exponential:
         """Setter of lambtha"""
         self.__lambtha = float(value)
 
-    def pmf(self, k):
-        """Calculates the value of the PMF for a given number
-        of successes"""
-
-        k = int(k)
+    def pdf(self, k):
+        """Calculates the value of the PDF given time period"""
 
         if k < 0:
             return 0
-        k_fact = 1
-        for i in range(1, k + 1):
-            k_fact *= i
-        return (self.lambtha ** k) * (self.e**(-self.lambtha)) / k_fact
+        return (self.lambtha) * (self.e ** (-self.lambtha*k))
 
     def cdf(self, k):
         """Calculates the value of the CDF for a given
@@ -69,5 +63,5 @@ class Exponential:
             return 0
         ans = 0
         for i in range(0, k + 1):
-            ans += self.pmf(i)
+            ans += self.pdf(i)
         return ans
