@@ -22,12 +22,12 @@ class Poisson:
 
     @property
     def data(self):
-        """Getter of data""""
+        """Getter of data"""
         return self.__data
 
     @data.setter
     def data(self, value):
-        """Setter of data""""
+        """Setter of data"""
         if value is not None and not isinstance(value, list):
             raise TypeError("data must be a list")
         if value is not None and len(value) < 2:
@@ -36,10 +36,10 @@ class Poisson:
 
     @property
     def lambtha(self):
-        """Getter of lambtha""""
+        """Getter of lambtha"""
         return self.__lambtha
 
     @lambtha.setter
     def lambtha(self, value):
-        """Setter of lambtha""""
+        """Setter of lambtha"""
         self.__lambtha = float(value)
