@@ -54,14 +54,8 @@ class Exponential:
         return (self.lambtha) * (self.e ** (-self.lambtha*k))
 
     def cdf(self, k):
-        """Calculates the value of the CDF for a given
-        number of successes"""
-
-        k = int(k)
+        """Calculates the value of the CDF for a given time period"""
 
         if k < 0:
             return 0
-        ans = 0
-        for i in range(0, k + 1):
-            ans += self.pdf(i)
-        return ans
+        return 1 - (self.e ** (-self.lambtha*k))
