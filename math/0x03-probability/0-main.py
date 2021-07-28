@@ -6,6 +6,7 @@ Poisson = __import__('poisson').Poisson
 np.random.seed(0)
 data = np.random.poisson(5., 100).tolist()
 p1 = Poisson(data)
+p1.data
 print('Lambtha:', p1.lambtha)
 
 p2 = Poisson(lambtha=5)
