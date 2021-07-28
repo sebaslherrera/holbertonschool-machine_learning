@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
-"""
-Project 0x03. Probability
-0. Initialize Poisson
-
-"""
+"""Project 0x03. Probability"""
 
 
 class Poisson:
