@@ -57,5 +57,4 @@ class Poisson:
             return 0
         for i in range(1, k + 1):
             k_fact *= i
-        print(k_fact)
         return (self.lambtha ** k) * (self.e**(-self.lambtha)) / k_fact
