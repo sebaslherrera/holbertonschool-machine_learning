@@ -76,8 +76,8 @@ class Normal:
     def pdf(self, x):
         """Calculates the value of the PDF for a given x-value"""
 
-        return (self.e ** (-0.5 * (self.z_score(x) ** 2))) /
-        (self.stddev * ((2 * self.pi) ** 0.5))
+        return (self.e ** (-0.5 * (self.z_score(x) ** 2))) \
+            / (self.stddev * ((2 * self.pi) ** 0.5))
 
     def cdf(self, x):
         """Calculates the value of the CDF for a given x-value"""
