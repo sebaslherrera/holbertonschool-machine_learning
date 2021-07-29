@@ -7,6 +7,7 @@ class Normal:
     """Class that represents an Normal distribution"""
 
     e = 2.7182818285
+    pi = 3.1415926536
 
     def __init__(self, data=None, mean=0., stddev=1.):
         """Constructor of Normal
@@ -72,16 +73,13 @@ class Normal:
         """Calculates the x-value of a given z-score"""
         return z * self.stddev + self.mean
 
-    def pdf(self, k):
-        """Calculates the value of the PDF given time period"""
+    def pdf(self, x):
+        """Calculates the value of the PDF for a given x-value"""
 
-        if k < 0:
-            return 0
-        return (self.lambtha) * (self.e ** (-self.lambtha*k))
+        return (self.e ** (-0.5 * (self.z_score(x) ** 2))) /
+        (self.stddev * ((2 * self.pi) ** 0.5))
 
-    def cdf(self, k):
-        """Calculates the value of the CDF for a given time period"""
+    def cdf(self, x):
+        """Calculates the value of the CDF for a given x-value"""
 
-        if k < 0:
-            return 0
-        return 1 - (self.e ** (-self.lambtha*k))
+        return 1 - (self.e ** (-self.lambtha*x))
