@@ -79,7 +79,12 @@ class Normal:
         return (self.e ** (-0.5 * (self.z_score(x) ** 2))) \
             / (self.stddev * ((2 * self.pi) ** 0.5))
 
+    def erf(self, z):
+        """Error function encountered in integrating the normal distribution"""
+        return (2 / (self.pi**0.5)) * \
+            (z - (z**3) / 3 + (z**5) / 10 - (z**7) / 42 + (z**9) / 216)
+
     def cdf(self, x):
         """Calculates the value of the CDF for a given x-value"""
 
-        return 1 - (self.e ** (-self.lambtha*x))
+        return 0.5 * (1 + self.erf((self.z_score(x) / (2 ** 0.5))))
