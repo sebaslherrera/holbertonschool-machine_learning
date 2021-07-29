@@ -64,6 +64,14 @@ class Normal:
         """Setter of stddev"""
         self.__stddev = float(value)
 
+    def z_score(self, x):
+        """Calculates the z-score of a given x-value"""
+        return (x - self.mean) / self.stddev
+
+    def x_value(self, z):
+        """Calculates the x-value of a given z-score"""
+        return z * self.stddev + self.mean
+
     def pdf(self, k):
         """Calculates the value of the PDF given time period"""
 
