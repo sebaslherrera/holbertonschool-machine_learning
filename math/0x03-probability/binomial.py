@@ -90,7 +90,11 @@ class Binomial:
     def pmf(self, k):
         """Calculates the value of the PMF for a given number of successes."""
 
+        if k < 0 or k > self.n:
+            return 0
+
         k = int(k)
+
         c = (Binomial.factorial(self.n)) / \
             (Binomial.factorial(k) * self.factorial((self.n - k)))
 
