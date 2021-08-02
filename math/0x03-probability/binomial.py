@@ -79,8 +79,19 @@ class Binomial:
         """Calculates the x-value of a given z-score"""
         return z * self.p + self.n
 
-    def pdf(self, x):
-        """Calculates the value of the PDF for a given x-value"""
+    @staticmethod
+    def factorial(x):
+        """Return factorial of x"""
+        ans = 1
+        for i in range(x, 1, -1):
+            ans *= i
+        return ans
 
-        return (self.e ** (-0.5 * (self.z_score(x) ** 2))) \
-            / (self.p * ((2 * self.pi) ** 0.5))
+    def pmf(self, k):
+        """Calculates the value of the PMF for a given number of successes."""
+
+        k = int(k)
+        c = (Binomial.factorial(self.n)) / \
+            (Binomial.factorial(k) * self.factorial((self.n - k)))
+
+        return c * pow(self.p, k) * pow((1 - self.p), (self.n - k))
